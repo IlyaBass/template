@@ -5,7 +5,6 @@ import browserSync   from 'browser-sync'
 import gulpSass      from 'gulp-sass'
 import dartSass      from 'sass'
 import postCss       from 'gulp-postcss'
-import cssnano       from 'cssnano'
 const  sassfn        = gulpSass(dartSass)
 import concat        from 'gulp-concat'
 import uglifyim      from 'gulp-uglify-es'
@@ -60,8 +59,7 @@ function sass() {
 	return src('DEV/sass/*.scss')
     .pipe(sassfn())
     .pipe(postCss([
-		autoprefixer({ grid: 'autoplace' }),
-		cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
+		autoprefixer({ grid: 'autoplace' })
 	]))
     .pipe(dest('DEV/ready/css'))
 	.pipe(browserSync.stream())

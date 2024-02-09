@@ -37,6 +37,19 @@
 	object-fit: cover;
 }
 
+@mixin trhover {
+	transition: 0.3s ease;
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+@mixin center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 /* responsive */
 @mixin md1 {
 	@media screen and (max-width: 1200px) {
