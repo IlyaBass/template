@@ -6,6 +6,9 @@
 	padding: 0;
 	outline: none !important;
 }
+a {
+	@include trhover;
+}
 input,
 a {
 	outline: none !important;
@@ -114,6 +117,18 @@ body {
 	padding-right: var(--container-padding);
 	width: 100%;
 	max-width: var(--container-width);
+	@media (max-width: 1400px) {
+		max-width: 1320px;
+	}
+	@include md1 {
+		max-width: 960px;
+	}
+	@include md2 {
+		max-width: 720px;
+	}
+	@include md3 {
+		max-width: 540px;
+	}
 }
 
 .container-fluid {
